@@ -1,0 +1,142 @@
+/* 复核与导出：让内容预览像独立的文稿窗口，交付物像 Finder 文件列表。 */
+.app-shell .export-content > .panel { overflow: hidden; }
+.app-shell .export-summary {
+  border-bottom: 1px solid #e8ebe6;
+  background: #fbfcfa;
+}
+.app-shell .export-summary .large-icon {
+  border-color: #d6e0ed;
+  background: #fff;
+  box-shadow: 0 1px 2px #29456b0b;
+}
+.app-shell .export-summary h3 { color: #2f3934; }
+.app-shell .decision-row { border-top-color: #e9ede8; }
+.app-shell .decision-row:last-of-type { border-bottom: 1px solid #e9ede8; }
+
+.app-shell .preview-toggle {
+  margin: 17px 0 0;
+  overflow: hidden;
+  border: 1px solid #dde3dc;
+  border-radius: 9px;
+  background: #f7f9f6;
+}
+.app-shell .preview-toggle > summary.text-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  margin: 0 !important;
+  padding: 10px 15px;
+  color: #375a97;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  list-style: none;
+  background: #fbfcfa;
+  cursor: pointer;
+  transition: background-color .16s ease;
+}
+.app-shell .preview-toggle > summary.text-btn::-webkit-details-marker { display: none; }
+.app-shell .preview-toggle > summary.text-btn:hover { background: #f0f4ef; }
+.app-shell .preview-toggle > summary.text-btn:focus-visible {
+  outline: 2px solid #8eabe2;
+  outline-offset: -3px;
+}
+.app-shell .preview-toggle > summary.text-btn::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-left: auto;
+  border-right: 1.5px solid #667b94;
+  border-bottom: 1.5px solid #667b94;
+  transform: rotate(45deg);
+  transition: transform .16s ease;
+}
+.app-shell .preview-toggle[open] > summary.text-btn::after { transform: rotate(225deg); }
+.app-shell .preview-toggle .candidate-paper {
+  max-height: 620px;
+  margin: 0;
+  padding: 24px 22px 26px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid #e2e7e1;
+  background: #edf0ec;
+  scrollbar-color: #c3cbc4 transparent;
+  scrollbar-width: thin;
+}
+.app-shell .candidate-paper > .paper {
+  width: min(100%, 720px);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 40px 48px;
+  border: 1px solid #e3e6e0;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 8px 25px #26352b13, 0 1px 3px #26352b0d;
+}
+.app-shell .candidate-paper > .paper + .paper {
+  margin-top: 16px !important;
+  padding: 22px 28px;
+  border-left: 3px solid #a9bfdf;
+  background: #fcfdff;
+  box-shadow: 0 2px 8px #26352b0b;
+}
+.app-shell .candidate-paper > .paper + .paper h3 {
+  color: #455b7c;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+.app-shell .candidate-paper > .paper + .paper p {
+  padding-block: 8px;
+  margin: 0;
+  border-top: 1px solid #e8edf3;
+}
+.app-shell .preview-toggle > .helper {
+  margin: 0;
+  padding: 11px 15px 12px;
+  border-top: 1px solid #e2e7e1;
+  background: #fbfcfa;
+  color: #65726a;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.app-shell .download-row {
+  justify-content: flex-start;
+  gap: 13px;
+  min-height: 76px;
+  transition: background-color .16s ease;
+}
+.app-shell .download-row::before {
+  content: '';
+  width: 30px;
+  height: 37px;
+  flex: 0 0 30px;
+  border: 1px solid #d8e1eb;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #fff 0 75%, #dbe7f7 75% 100%);
+  box-shadow: 0 1px 2px #27352b0d;
+}
+.app-shell .download-row:has(a[href*='/download/candidate/'])::before {
+  border-color: #bbd0ee;
+  background: linear-gradient(135deg, #f9fbff 0 75%, #bcd2f4 75% 100%);
+}
+.app-shell .download-row > div { flex: 1; min-width: 0; }
+.app-shell .download-row strong { color: #303b35; }
+.app-shell .download-row small { overflow-wrap: anywhere; }
+.app-shell .download-row > .btn { margin-left: auto; flex: 0 0 auto; }
+.app-shell .download-row:focus-within { background: #f7f9f6; }
+
+@media (max-width: 760px) {
+  .app-shell .preview-toggle .candidate-paper { padding: 15px 12px 18px; max-height: 540px; }
+  .app-shell .candidate-paper > .paper { padding: 26px 22px; }
+  .app-shell .candidate-paper > .paper + .paper { padding: 17px 19px; }
+  .app-shell .download-row { min-height: 72px; gap: 9px; }
+  .app-shell .download-row::before { width: 26px; height: 33px; flex-basis: 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .preview-toggle > summary.text-btn,
+  .app-shell .preview-toggle > summary.text-btn::after,
+  .app-shell .download-row { transition: none; }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafaf8">
+  <title>合序 · 法务协作工作台</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/identity.css">
+  <link rel="stylesheet" href="/mac-ui.css">
+  <link rel="stylesheet" href="/mac-controls.css">
+  <link rel="stylesheet" href="/mac-forms.css">
+  <link rel="stylesheet" href="/mac-surfaces.css">
+  <link rel="stylesheet" href="/mac-preview.css">
+  <link rel="stylesheet" href="/mac-feedback.css">
+  <link rel="stylesheet" href="/entry.css">
+  <script src="/app.js" defer></script>
+</head>
+<body class="mac-controls">
+  <a class="skip" href="#main">跳到主要内容</a>
+  <div id="entry-cover" class="entry-cover" role="dialog" aria-modal="true" aria-labelledby="entry-name" aria-describedby="entry-description" hidden>
+    <button class="entry-skip" type="button" data-entry-action="skip">跳过动画</button>
+    <div class="entry-content">
+      <svg class="entry-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <g class="entry-mark-outline" fill="none" stroke="currentColor" stroke-width=".55" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 4H7a5 5 0 0 0 0 10h3V4Z"/>
+          <path d="M14 20h3a5 5 0 0 0 0-10h-3v10Z"/>
+        </g>
+        <g class="entry-mark-solid" fill="currentColor">
+          <path d="M10 4H7a5 5 0 0 0 0 10h3V4Z"/>
+          <path d="M14 20h3a5 5 0 0 0 0-10h-3v10Z"/>
+        </g>
+        <path class="entry-mark-bridge" d="M10 8h4m-4 8h4" fill="none" stroke="currentColor" stroke-width=".75" stroke-linecap="round"/>
+      </svg>
+      <h1 id="entry-name" class="entry-name">合序</h1>
+      <p id="entry-description" class="entry-description">让每一次交接，都有章可循。</p>
+      <button class="entry-enter" type="button" data-entry-action="enter">进入工作台 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button>
+    </div>
+    <span class="entry-foot">法务协作助手</span>
+  </div>
+  <div id="app"><div class="boot">合序正在打开工作台…</div></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="modal" aria-labelledby="modal-title"></dialog>
+</body>
+</html>

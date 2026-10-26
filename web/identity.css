@@ -1,0 +1,190 @@
+/* 合序视觉深化：以卷宗的题名、页边、索引和处理痕迹组织信息。 */
+::selection{background:#dce7ff;color:#173a8e}
+html{scrollbar-color:#c9cec9 transparent}
+input,textarea{caret-color:var(--blue)}
+body{background:var(--bg)}
+:root{--font-document:"Songti SC","STSong",serif}
+.stat-number,.nav-count,.count,.version,.detail-meta,.timeline-item time,.next-case-side strong{font-variant-numeric:tabular-nums}
+h1,h2,h3{letter-spacing:-.02em;text-wrap:balance}
+.muted,.helper{color:var(--muted)}
+
+/* 导航像卷宗目录：固定位置，弱化卡片化的选中态。 */
+.sidebar{border-right:1px solid var(--line);box-shadow:none}
+.brand{padding-bottom:29px}
+.brand-name{font-size:24px;letter-spacing:.02em}
+.brand small{letter-spacing:0;font-size:11px;margin-top:1px}
+.nav-label{letter-spacing:0;font-weight:600;color:#737b75}
+.nav-item{border-radius:7px;padding-block:11px}
+.nav-item.active{background:#eff4ff;box-shadow:inset 1px 0 var(--blue);font-weight:600}
+.demo-panel{box-shadow:none}
+.topbar{background:#fafaf8;backdrop-filter:none}
+.breadcrumbs{font-size:12px}
+.breadcrumbs strong{font-weight:600}
+.main{padding-top:38px}
+
+/* 标题与数据依照文件首页的层级排版。 */
+.heading{padding-bottom:23px;border-bottom:1px solid var(--line);margin-bottom:27px}
+.heading h1{font-size:28px;font-weight:650;line-height:1.35}
+.heading h1,.next-case h2,.paper h2{font-family:var(--font-document);font-weight:600;letter-spacing:.035em}
+.heading p{line-height:1.75;margin-top:7px}
+.heading-buttons{align-self:center}
+.next-case{border:0;border-radius:10px;box-shadow:0 10px 28px #2925240b;position:relative}
+.next-case:before{content:"";position:absolute;inset:0 auto 0 0;width:1px;background:var(--blue)}
+.next-case-kicker{display:none}
+.next-case-main{padding:32px 34px 30px}
+.next-case h2{font-size:25px;font-weight:600;line-height:1.38}
+.next-case p{font-size:13px;margin-top:11px;line-height:1.8}
+.next-case-actions{margin-top:25px}
+.next-case-side{background:#fafaf8;border-left:1px solid var(--line)}
+.next-case-side>div{padding-block:13px}
+.stats{border-color:var(--line);padding-block:15px}
+.stat{align-items:baseline}
+.stat-title{font-size:12px;color:#59615e}
+.stat-number{font-size:28px;letter-spacing:-.025em;font-weight:650}
+.stat-icon{display:none}
+
+/* 列表是索引页，正文保留更高的留白。 */
+.panel{box-shadow:none;border-color:var(--line);border-radius:10px}
+.panel-header{padding:23px 26px 20px}
+.panel-header h2{font-size:18px;font-weight:650}
+.panel-header .count{font-size:12px}
+.toolbar{padding-inline:26px}
+.contract-table th{background:#fafaf8;color:#59615e;border-color:var(--line);font-weight:600;font-size:11px}
+.contract-table td{border-color:var(--line);font-size:13px}
+.contract-table tbody tr:hover{background:#fafaf8}
+.file-icon{background:transparent;color:var(--blue);border:1px solid #dce3ee;border-radius:5px}
+.file-title strong{font-size:13px;font-weight:600}
+.file-title small{font-size:11px;line-height:1.6;color:var(--muted)}
+.table-footer{border-top:1px solid var(--line);background:#fafaf8}
+.guide{border:0;border-left:1px solid var(--line);border-radius:0;background:transparent;padding:18px 0 0 26px}
+.guide h3{font-size:15px;margin-bottom:25px}
+.guide-step p{color:var(--muted)}
+.guide-note{color:var(--muted)}
+.activity{box-shadow:none}
+
+/* 合同详情是案卷首页；步骤是一条顺序线，不是另一张卡片。 */
+.detail-heading{padding-bottom:23px;margin-bottom:0}
+.detail-heading h1{font-size:26px}
+.detail-meta{font-size:12px;line-height:1.5}
+.workflow{border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:transparent;margin:0 0 22px;padding:20px 0}
+.workflow-step{font-size:12px;color:#6b7470}
+.workflow-step.done{color:var(--green)}
+.workflow-step .step-circle{background:#fff;border-color:var(--line)}
+.workflow-step.done .step-circle{background:#eaf5ec;border-color:#d3e6d8}
+.detail-tabs{border-color:var(--line);margin-bottom:22px}
+.detail-tabs .tab{font-size:13px}
+.tab.active{font-weight:600}
+.notice{border-radius:8px}
+
+/* 批注处理：原文像纸面，决定区像批注栏。 */
+.review-layout{border-color:var(--line);box-shadow:none;border-radius:10px}
+.comment-list{background:#fafaf8}
+.comment-item{border-color:var(--line)}
+.comment-item:hover{background:#f5f6f2}
+.comment-item.active{background:#fff;color:var(--ink)}
+.comment-item.active:before{width:1px;background:var(--blue)}
+.comment-item-top{font-size:11px;color:#64706a}
+.comment-item p{font-size:13px;line-height:1.7}
+.document-pane{background:#eeede9}
+.document-toolbar{color:#5d6662;font-size:11px}
+.paper{border:0;box-shadow:0 8px 25px #29252412;padding:42px 38px;max-width:760px;margin-inline:auto}
+.paper h2{font-size:19px;margin-bottom:32px;color:var(--ink)}
+.paper p{font-size:13px;line-height:2.05;color:#303734}
+.paper p.paper-heading{font-size:13px;color:var(--ink)}
+.paper p.highlight{background:#fff4d8;border-left:1px solid #b98a22;color:#57471f}
+.paper-caption{font-size:11px;color:#5e6662}
+.inspector{background:#fff}
+.inspector-title{padding-bottom:14px;border-bottom:1px solid var(--line)}
+.inspector-title h3{font-size:16px}
+.original-comment{border-radius:5px}
+.suggestion{border-radius:8px}
+
+/* 待办、导出与记录共享同一套行与分隔语言。 */
+.task-card{padding:27px 28px}
+.task-head h3{font-size:16px;line-height:1.55}
+.task-source{border-left:1px solid #c9d5e7;padding:15px 17px;font-size:12px}
+.global-task{border-radius:10px}
+.global-task h3{font-size:14px;line-height:1.55}
+.export-layout{gap:24px}
+.export-content .panel{margin-bottom:22px}
+.export-summary{padding:28px 27px;align-items:flex-start}
+.export-summary .large-icon{height:48px;width:40px;border:1px solid #cdd7e6;background:transparent;border-radius:5px;color:var(--blue)}
+.export-summary h3{font-size:17px;line-height:1.5;margin-bottom:6px}
+.export-summary p{font-size:12px;color:var(--muted)}
+.decision-row{padding:19px 26px;border-color:var(--line)}
+.decision-row>svg{color:#68736c}
+.decision-row p{font-size:13px;line-height:1.75}
+.decision-row small{font-size:11px}
+.export-sidebar{border-color:var(--line);box-shadow:none;background:#fafaf8;padding:27px}
+.export-sidebar h3{font-size:17px;padding-bottom:15px;border-bottom:1px solid var(--line)}
+.download-row{padding:20px 26px;border-color:var(--line)}
+.download-row strong{font-size:13px;font-weight:600}
+.download-row small{font-size:11px;color:var(--muted)}
+.timeline{padding:8px 28px 28px}
+.timeline-item h3{font-size:13px}
+.timeline-item p{color:var(--muted)}
+.timeline-item time{font-size:11px;color:var(--muted)}
+.settings-panel{padding:31px}
+.settings-panel p{color:var(--muted)}
+
+/* 按钮与输入保持原有操作语义，只收紧边界与焦点。 */
+.btn{border-color:#d9ded8;border-radius:7px;box-shadow:none}
+.btn.primary{box-shadow:none}
+.btn:hover{background:#f8faf7;border-color:#abb9b2}
+.btn.primary:hover{background:#1944bc;border-color:#1944bc}
+.field,.search input{border-color:#d7ddd7}
+.field:focus,.search input:focus{outline:2px solid #93b4ff;outline-offset:1px}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+a:not(.btn):not(.nav-item):not(.brand):not(.tab):hover{text-decoration:underline;text-underline-offset:.2em}
+
+@media(max-width:1250px){
+  .main{padding-top:30px}
+  .guide{display:none}
+}
+@media(max-width:1050px){
+  .workflow{padding-block:16px}
+  .review-layout.show-document .document-pane{background:#eeede9}
+}
+@media(max-width:760px){
+  .main{padding:23px 18px 36px}
+  .heading{padding-bottom:19px;margin-bottom:21px}
+  .heading h1{font-size:24px}
+  .next-case-main{padding:24px 22px}
+  .next-case h2{font-size:21px}
+  .next-case-side{border-left:0;border-top:1px solid var(--line)}
+  .next-case-side>div{padding:0}
+  .stats{padding-block:5px}
+  .stat{padding:15px 11px}
+  .stat-number{font-size:25px}
+  .panel-header{padding:19px 18px}
+  .toolbar{padding-inline:18px}
+  .contract-table td{padding-block:18px}
+  .file-title strong{font-size:13px}
+  .file-title small{font-size:11px}
+  .detail-heading{padding-bottom:21px}
+  .detail-heading h1{font-size:24px}
+  .detail-meta{font-size:11px}
+  .workflow{padding:15px 0;margin-top:0}
+  .workflow-step{font-size:10px;gap:5px}
+  .workflow-step .step-circle{width:20px;height:20px}
+  .comment-item.active:before{inset:auto 0 0;width:100%;height:1px}
+  .comment-item p{font-size:12px}
+  .inspector{padding:23px 20px}
+  .paper{padding:28px 22px}
+  .task-card{padding:22px 18px}
+  .export-summary{padding:22px 18px}
+  .export-summary h3{font-size:15px}
+  .export-summary p{font-size:12px}
+  .decision-row{padding:16px 18px}
+  .decision-row p{font-size:12px}
+  .decision-row .badge{font-size:10px}
+  .download-row{padding:18px}
+  .download-row strong{font-size:12px}
+  .download-row .btn{font-size:11px}
+  .export-sidebar{padding:23px 20px}
+  .timeline{padding:8px 18px 20px}
+  .settings-panel{padding:23px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav-item,.btn,.icon-btn,.tab,.comment-item{transition:none}
+}

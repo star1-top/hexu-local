@@ -1,0 +1,147 @@
+/* 轻量状态栏、系统式对话框与可辨认的操作反馈。 */
+body.mac-controls .notice {
+  position: relative;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #dfe6e2;
+  border-left: 3px solid #9fb6d6;
+  border-radius: 7px;
+  background: #f8fafb;
+  color: #475962;
+  font-size: 12px;
+  line-height: 1.7;
+}
+body.mac-controls .notice:not(.amber):not(.error):not(.green) {
+  border-color: #dfe6e2;
+  border-left-color: #9fb6d6;
+  background: #f8fafb;
+  color: #475962;
+}
+body.mac-controls .notice > svg { color: #5e7ba9; margin-top: 2px; }
+body.mac-controls .notice strong { color: #344a58; font-weight: 600; }
+body.mac-controls .notice.amber {
+  border-color: #e9e0cf;
+  border-left-color: #caa96d;
+  background: #fcfaf5;
+  color: #75634b;
+}
+body.mac-controls .notice.amber > svg,
+body.mac-controls .notice.amber strong { color: #946e35; }
+body.mac-controls .notice.green {
+  border-color: #dce9e1;
+  border-left-color: #80af92;
+  background: #f7faf7;
+  color: #4c6b59;
+}
+body.mac-controls .notice.green > svg,
+body.mac-controls .notice.green strong { color: #357451; }
+body.mac-controls .notice.error {
+  border-color: #efdcd9;
+  border-left-color: #d1847d;
+  background: #fdf8f7;
+  color: #8c4b45;
+}
+body.mac-controls .notice.error > svg,
+body.mac-controls .notice.error strong { color: #ae5149; }
+.app-shell .blockers {
+  border-color: #e9e0cf;
+  border-left: 3px solid #caa96d;
+  border-radius: 7px;
+  background: #fcfaf5;
+}
+.app-shell .blocker { color: #75634b; }
+.app-shell .check-item { color: #65746a; }
+.app-shell .check-item.ok { color: #47785b; }
+.app-shell .check-item.fail { color: #987243; }
+
+#modal {
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(88vh, 760px);
+  border: 1px solid #d6dcd6;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 25px 75px #17251d29, 0 3px 12px #17251d14;
+}
+#modal[open] { display: flex; flex-direction: column; animation: modal-appear .2s ease-out both; }
+#modal::backdrop { background: #1e2a23a1; backdrop-filter: blur(4px); }
+#modal .modal-header {
+  flex: 0 0 auto;
+  min-height: 58px;
+  padding: 13px 20px;
+  border-bottom-color: #e4e9e3;
+  background: #f8faf7;
+}
+#modal .modal-header h2 { color: #303a33; font-size: 15px; font-weight: 600; }
+#modal .modal-header .icon-btn { width: 29px; height: 29px; border-radius: 6px; }
+#modal .modal-header .icon-btn:hover { background: #e9ede8; color: #34423a; }
+#modal .modal-body { min-height: 0; overflow: auto; padding: 22px 23px 25px; }
+#modal .modal-footer {
+  flex: 0 0 auto;
+  padding: 13px 20px;
+  border-top-color: #e4e9e3;
+  background: #f8faf7;
+}
+#modal .modal-error:not(:empty) {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid #efdcd9;
+  border-left: 3px solid #d1847d;
+  border-radius: 6px;
+  background: #fdf8f7;
+  color: #934b45;
+}
+#modal .modal-error:empty { display: none; }
+#modal[data-tone="danger"] .modal-header { box-shadow: inset 3px 0 #c9847d; }
+#modal[data-tone="danger"] .modal-header h2 { color: #8f4a45; }
+
+#toast {
+  left: auto;
+  right: 24px;
+  bottom: 22px;
+  width: min(390px, calc(100vw - 32px));
+  max-width: none;
+  padding: 13px 17px 13px 37px;
+  border: 1px solid #dce5dc;
+  border-left: 3px solid #83ae91;
+  border-radius: 9px;
+  background: #fff;
+  color: #35463a;
+  box-shadow: 0 12px 32px #23332a1c, 0 2px 6px #23332a0c;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.65;
+  transform: translateY(120px);
+  transition: transform .22s cubic-bezier(.2,.75,.25,1);
+}
+#toast::before {
+  content: '';
+  position: absolute;
+  top: 17px;
+  left: 14px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #5e9a72;
+  box-shadow: inset 0 0 0 3px #dceee1;
+}
+#toast.show { transform: translateY(0); }
+#toast.error {
+  border-color: #efdcd9;
+  border-left-color: #d1847d;
+  background: #fff;
+  color: #8a4843;
+}
+#toast.error::before { background: #c3655e; box-shadow: inset 0 0 0 3px #f7e5e2; }
+@keyframes modal-appear { from { opacity: 0; transform: translateY(7px) scale(.99); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 760px) {
+  body.mac-controls .notice { padding: 11px 12px; }
+  #modal .modal-header { padding: 12px 16px; }
+  #modal .modal-body { padding: 19px 17px 21px; }
+  #modal .modal-footer { padding: 12px 16px; }
+  #toast { right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #modal[open] { animation: none; }
+  #toast { transition: none; }
+}

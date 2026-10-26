@@ -1,0 +1,84 @@
+/* 文件索引与内容面板：薄边、细分隔、明确的阅读顺序。 */
+.app-shell .panel {
+  border-color: #dfe3de;
+  background: #fff;
+  box-shadow: 0 1px 2px #27352b0b;
+}
+.app-shell .activity,
+.app-shell .guide { background: transparent; box-shadow: none; }
+.app-shell .dashboard-grid > .panel:first-child { overflow: hidden; align-self: start; }
+.app-shell .panel-header {
+  border-bottom: 1px solid #e8ebe6;
+  background: #fbfcfa;
+}
+.app-shell .dashboard-grid > .panel:first-child .panel-header { padding-block: 18px; }
+.app-shell .dashboard-grid > .panel:first-child .toolbar { padding-top: 15px; }
+.app-shell .panel-header h2,
+.app-shell .panel-header h3 { color: #303a33; }
+
+.app-shell .contract-table { font-variant-numeric: tabular-nums; }
+.app-shell .contract-table th {
+  border-top: 0;
+  border-bottom-color: #e3e8e2;
+  background: #f7f9f6;
+  color: #66736a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .025em;
+}
+.app-shell .contract-table td { border-bottom-color: #e9ede8; }
+.app-shell .contract-table tbody tr { transition: background-color .16s ease; }
+.app-shell .contract-table tbody tr:hover,
+.app-shell .contract-table tbody tr:focus-within { background: #f7f9f6; }
+.app-shell .contract-table tbody tr:hover td:first-child,
+.app-shell .contract-table tbody tr:focus-within td:first-child { box-shadow: inset 2px 0 #a7bee9; }
+.app-shell .contract-table th:last-child,
+.app-shell .contract-table td:last-child { text-align: right; padding-right: 23px; }
+.app-shell .file-title { gap: 10px; }
+.app-shell .file-row-num {
+  width: 18px;
+  flex: 0 0 18px;
+  color: #7c8980;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: center;
+}
+.app-shell .file-icon {
+  width: 32px;
+  height: 39px;
+  border-color: #d8e1ee;
+  background: #f8faff;
+  border-radius: 5px;
+  color: #416abd;
+}
+.app-shell .file-icon svg { width: 19px; height: 19px; }
+.app-shell .file-title strong { margin-bottom: 5px; }
+.app-shell .file-title strong a:hover { color: #2856bd !important; text-decoration: underline; text-underline-offset: 2px; }
+.app-shell .progress { height: 3px; background: #edf1ec; }
+.app-shell .progress > span { background: #6e91d0; }
+.app-shell .table-footer { background: #fbfcfa; border-top-color: #e5e9e4; }
+
+.app-shell .global-task,
+.app-shell .task-card { border-left: 2px solid #cbd8e9; }
+.app-shell .global-task { transition: border-color .16s ease, box-shadow .16s ease; }
+.app-shell .global-task:hover { border-color: #adbfdd; box-shadow: 0 2px 6px #27352b10; }
+.app-shell .export-summary { background: #fcfdfa; }
+.app-shell .download-row { border-top-color: #e8ebe6; }
+.app-shell .download-row:hover { background: #fafbf9; }
+
+@media (max-width: 760px) {
+  .app-shell .dashboard-grid > .panel:first-child .panel-header { padding-block: 16px; }
+  .app-shell .dashboard-grid > .panel:first-child .toolbar { padding-top: 14px; }
+  .app-shell .contract-table th:last-child,
+  .app-shell .contract-table td:last-child { padding-right: 17px; }
+  .app-shell .file-title { gap: 7px; }
+  .app-shell .file-row-num { width: 15px; flex-basis: 15px; font-size: 10px; }
+  .app-shell .file-icon { width: 28px; height: 34px; }
+  .app-shell .file-icon svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .contract-table tbody tr,
+  .app-shell .global-task { transition: none; }
+}

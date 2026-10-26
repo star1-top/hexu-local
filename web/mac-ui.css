@@ -1,0 +1,99 @@
+/* 全产品界面：Finder / 预览式安静侧栏、统一工具区和细分隔。 */
+.app-shell .sidebar {
+  background: #f3f3f1;
+  border-right: 1px solid #dedfdb;
+  box-shadow: none;
+  padding-top: 23px;
+}
+.app-shell .brand { gap: 11px; padding-bottom: 30px; }
+.app-shell .brand-name { font-size: 21px; letter-spacing: .06em; }
+.app-shell .brand small { color: #747b78; font-size: 10px; }
+.app-shell .nav-label { color: #818783; font-size: 11px; font-weight: 500; padding-bottom: 6px; }
+.app-shell .nav-item {
+  min-height: 40px;
+  margin-block: 2px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  color: #4a514e;
+  font-weight: 450;
+}
+.app-shell .nav-item svg { width: 17px; height: 17px; color: #727b76; }
+.app-shell .nav-item:hover { background: #e9eae6; }
+.app-shell .nav-item.active {
+  background: #e6eaf0;
+  box-shadow: none;
+  color: #29446f;
+  font-weight: 600;
+}
+.app-shell .nav-item.active svg { color: #315bac; }
+.app-shell .nav-count,
+.app-shell .nav-item.active .nav-count { background: transparent; color: #79817d; font-variant-numeric: tabular-nums; }
+.app-shell .sidebar-divider { margin-block: 19px 13px; }
+.app-shell .demo-panel {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #dedfdb;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 8px 14px;
+  padding: 16px 4px 0;
+  color: #777e7a;
+  font-size: 11px;
+}
+.app-shell .demo-panel strong { font-size: 11px; color: #626b66; }
+.app-shell .profile { padding-top: 14px; }
+.app-shell .avatar { background: #e4e8e5; color: #505c55; }
+
+.app-shell .topbar {
+  height: 60px;
+  padding-inline: 38px;
+  background: #f9f9f8;
+  border-bottom-color: #dedfdb;
+}
+.app-shell .breadcrumbs { gap: 9px; color: #7a817d; }
+.app-shell .breadcrumbs strong { color: #303833; font-size: 13px; font-weight: 600; }
+.app-shell .breadcrumbs > svg { width: 12px; height: 12px; color: #a3a9a4; }
+.app-shell .top-actions { gap: 17px; color: #7a817d; }
+.app-shell .local-dot { background: #668c75; }
+.app-shell .topbar .icon-btn { width: 32px; height: 32px; border: 1px solid transparent; }
+.app-shell .topbar .icon-btn:hover { border-color: #dfe2df; background: #fff; color: #385c9d; }
+
+.app-shell .main { max-width: 1640px; padding: 35px 38px 32px; }
+.app-shell .main:focus { outline: none; }
+.dashboard-shell .main { max-width: 1420px; }
+.app-shell .heading { padding-bottom: 24px; border-bottom-color: #e1e2de; margin-bottom: 23px; }
+.app-shell .next-case {
+  border: 1px solid #e0e2de;
+  border-radius: 8px;
+  box-shadow: none;
+}
+.app-shell .next-case:before { width: 2px; }
+.app-shell .next-case-side { background: #f8f8f6; }
+.app-shell .stats { border-color: #e1e2de; }
+.app-shell .panel { border-color: #e2e4df; border-radius: 8px; }
+.app-shell .contract-table th { background: #fff; border-color: #e7e9e5; }
+.app-shell .contract-table td { border-color: #eceeea; }
+.app-shell .contract-table tbody tr:hover { background: #f8f9f7; }
+.app-shell .activity { background: transparent; border: 0; border-top: 1px solid #e1e2de; border-radius: 0; padding-inline: 0; }
+.app-shell .btn { border-radius: 6px; }
+.app-shell .search input { border-radius: 6px; background: #fff; }
+
+@media (min-width: 761px) {
+  .app-shell { grid-template-columns: 220px minmax(0, 1fr); }
+  .app-shell .sidebar { width: 220px; }
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  .app-shell { grid-template-columns: 194px minmax(0, 1fr); }
+  .app-shell .sidebar { width: 194px; }
+  .app-shell .topbar,
+  .app-shell .main { padding-inline: 25px; }
+}
+@media (max-width: 760px) {
+  .app-shell .sidebar { width: 216px; }
+  .app-shell .nav-item { min-height: 44px; }
+  .app-shell .topbar { height: 56px; padding-inline: 17px; }
+  .app-shell .topbar .icon-btn { width: 44px; height: 44px; }
+  .app-shell .main { padding: 23px 18px 36px; }
+  .app-shell .next-case { border-radius: 8px; }
+  .app-shell .activity { padding-inline: 0; }
+}

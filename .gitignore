@@ -1,0 +1,14 @@
+.venv/
+.local-data/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+*.sqlite*
+*.docx
+*.pdf
+*.pem
+*.key
+*.p12
+test-results/

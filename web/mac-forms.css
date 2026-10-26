@@ -1,0 +1,115 @@
+/* 表单与输入：清晰的编辑边界、克制的焦点反馈和统一的选中态。 */
+body.mac-controls .field-label {
+  color: #56625b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+body.mac-controls .field,
+body.mac-controls .search input {
+  min-height: 38px;
+  border: 1px solid #d5dad5;
+  border-radius: 7px;
+  background-color: #fff;
+  color: #303a33;
+  box-shadow: inset 0 1px 2px #27362b08, 0 1px 0 #ffffffb8;
+  transition: border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+}
+body.mac-controls .field { padding: 8px 11px; }
+body.mac-controls .search input { padding-left: 34px; }
+body.mac-controls .field:hover,
+body.mac-controls .search input:hover { border-color: #b8c2ba; }
+body.mac-controls .field:focus,
+body.mac-controls .search input:focus {
+  outline: none;
+  border-color: #6c91d8;
+  box-shadow: 0 0 0 3px #3d70cf24, inset 0 1px 2px #27362b08;
+}
+body.mac-controls .field::placeholder,
+body.mac-controls .search input::placeholder { color: #98a29a; opacity: 1; }
+body.mac-controls .toolbar .search svg {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #818d83;
+}
+body.mac-controls .toolbar .search:focus-within svg { color: #3561b1; }
+body.mac-controls textarea.field { min-height: 86px; line-height: 1.65; }
+body.mac-controls select.field {
+  appearance: none;
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1.5 5 5 5-5' fill='none' stroke='%23657068' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+body.mac-controls .field:disabled,
+body.mac-controls .search input:disabled { background-color: #f4f5f2; color: #7c877e; }
+
+body.mac-controls .choice span {
+  min-height: 32px;
+  align-items: center;
+  padding: 6px 10px;
+  border-color: #d9ded9;
+  border-radius: 6px;
+  background: #f6f7f4;
+  color: #5f6b62;
+  font-weight: 500;
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+}
+body.mac-controls .choice:hover span { border-color: #bbc6bc; background: #f0f3ef; }
+body.mac-controls .choice input:checked + span {
+  border-color: #a5b9e4;
+  background: #edf2ff;
+  color: #2854a5;
+  font-weight: 600;
+}
+body.mac-controls .choice input:focus-visible + span {
+  outline: 3px solid #8eb0f5;
+  outline-offset: 2px;
+}
+body.mac-controls .checkline { color: #59665e; }
+body.mac-controls .checkline input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  border: 1px solid #afb9af;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: inset 0 1px 2px #27362b0c;
+}
+body.mac-controls .checkline input[type="checkbox"]:hover { border-color: #748fbd; }
+body.mac-controls .checkline input[type="checkbox"]:checked {
+  border-color: #2856c4;
+  background: #2856c4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m2 6 2.5 2.5L10 3' fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+  box-shadow: none;
+}
+body.mac-controls .checkline input[type="checkbox"]:focus-visible {
+  outline: 3px solid #8eb0f5;
+  outline-offset: 2px;
+}
+body.mac-controls .checkline input[type="checkbox"]:disabled { opacity: .55; }
+
+body.mac-controls input.field[type="file"] { padding: 5px; }
+body.mac-controls input.field[type="file"]::file-selector-button {
+  min-height: 28px;
+  margin-right: 10px;
+  padding: 4px 10px;
+  border: 1px solid #d9ddd8;
+  border-radius: 5px;
+  background: #f0f2ef;
+  color: #343d37;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  body.mac-controls .field,
+  body.mac-controls .search input { min-height: 44px; }
+  body.mac-controls .choice span { min-height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.mac-controls .field,
+  body.mac-controls .search input,
+  body.mac-controls .choice span { transition: none; }
+}

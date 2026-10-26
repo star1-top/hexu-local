@@ -1,0 +1,70 @@
+/* 全产品控件：紧凑蓝色主按钮、浅灰次按钮与合同分段筛选。 */
+body.mac-controls .btn {
+  min-height: 38px;
+  padding: 7px 13px;
+  border: 1px solid #d9ddd8;
+  border-radius: 7px;
+  background: #f0f2ef;
+  color: #343d37;
+  box-shadow: inset 0 1px #ffffffb8;
+  font-weight: 600;
+}
+body.mac-controls .btn:hover { background: #e8ece8; border-color: #c7cec8; }
+body.mac-controls .btn:active { background: #dfe5df; box-shadow: inset 0 1px 2px #26352a16; }
+body.mac-controls .btn.primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  box-shadow: 0 1px 2px #18377633;
+}
+body.mac-controls .btn.primary:hover { background: #1944bc; border-color: #1944bc; }
+body.mac-controls .btn.primary:active { background: #173ea9; }
+body.mac-controls .btn.quiet { background: transparent; border-color: transparent; box-shadow: none; color: #58625b; }
+body.mac-controls .btn.quiet:hover { background: #ebedea; color: #303934; }
+body.mac-controls .btn.danger { background: #fff; border-color: #e5c9c6; color: var(--red); box-shadow: none; }
+body.mac-controls .btn.sm { min-height: 34px; padding: 5px 11px; }
+body.mac-controls .inspector .btn.primary { min-height: 44px; }
+
+body.mac-controls .toolbar .tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid #dce0db;
+  border-radius: 8px;
+  background: #edf0ec;
+}
+body.mac-controls .toolbar .tab {
+  min-height: 30px;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 5px;
+  color: #626c65;
+  line-height: 20px;
+}
+body.mac-controls .toolbar .tab:hover { background: #f6f8f5; color: #38453c; }
+body.mac-controls .toolbar .tab.active {
+  background: #fff;
+  color: #303a32;
+  box-shadow: 0 1px 3px #26352a1d;
+  font-weight: 600;
+}
+body.mac-controls .toolbar .search input { height: 38px; background: #fff; }
+body.mac-controls .toolbar .search svg { top: 12px; }
+
+@media (max-width: 760px) {
+  body.mac-controls .btn,
+  body.mac-controls .btn.sm { min-height: 44px; }
+  body.mac-controls .toolbar .tab { min-height: 44px; padding-block: 10px; }
+  body.mac-controls .toolbar .search input { height: 44px; }
+  body.mac-controls .toolbar .search svg { top: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.mac-controls .btn,
+  body.mac-controls .toolbar .tab { transition: none; }
+}
+.ai-action-row{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;margin-left:14px;vertical-align:middle}
+.ai-action-row>a{font-size:12px;white-space:nowrap}
+.ai-model-control{display:inline-flex;align-items:center;gap:7px;color:#52677f;font-size:12px;white-space:nowrap}
+.ai-model-control select{min-width:160px;min-height:32px;padding:5px 26px 5px 9px;font-size:12px}
+@media(max-width:760px){.ai-action-row{display:flex;margin:10px 0 0}.ai-model-control{width:100%}.ai-model-control select{flex:1}}
